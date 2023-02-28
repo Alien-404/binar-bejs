@@ -4,7 +4,7 @@ Ini adalah repository Github saya untuk course Binar Academy dengan topik Backen
 
 ## **Struktur Repository**
 
-*   **chapter1**: berisi file dan proyek yang berkaitan dengan chapter 1 course.
+*   **challenge**: berisi file dan proyek yang berkaitan dengan challenge course.
 
 ## **Instalasi**
 
