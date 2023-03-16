@@ -1,0 +1,19 @@
+{
+  "name": "challange-chapter-2",
+  "version": "1.0.0",
+  "description": "binar academy backend JS - challenge-02",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon main.js"
+  },
+  "author": "Rico",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "inquirer": "^9.1.4"
+  }
+}
