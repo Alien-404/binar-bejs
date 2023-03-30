@@ -1,6 +1,6 @@
 ## ERD Manufaktur Binar
 
-![erd by rico](erd/erd.png 'ERD Manufaktur Binar')
+![erd by rico](erd/erd_manufaktur_binar.png 'ERD Manufaktur Binar')
 
 ## **Data definition language Manufaktur Binar**
 
