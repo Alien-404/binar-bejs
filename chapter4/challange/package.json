@@ -1,0 +1,24 @@
+{
+  "name": "challange-chapter-4",
+  "version": "1.0.0",
+  "description": "binar academy backend JS - challenge-04",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app",
+    "create": "npx sequelize-cli db:create",
+    "migrate": "npx sequelize-cli db:migrate"
+  },
+  "author": "Rico",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.1.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.31.0"
+  }
+}

@@ -1,0 +1,476 @@
+{
+	"info": {
+		"_postman_id": "c41a8484-895e-4734-9a47-2d2a1cd066c7",
+		"name": "restfull-api-challange-chapter-04",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11908027"
+	},
+	"item": [
+		{
+			"name": "suppliers",
+			"item": [
+				{
+					"name": "get suppliers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/supplier",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get supplier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/supplier/6a6e682f-6685-4954-b4e1-d1147d524434",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"supplier",
+								"6a6e682f-6685-4954-b4e1-d1147d524434"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create supplier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nvidia\",\r\n    \"address\": \"jakarta barat\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/supplier",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update supplier",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"surabaya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/supplier/0883728b-7099-470a-aa46-97e59e972153",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"supplier",
+								"0883728b-7099-470a-aa46-97e59e972153"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy supplier",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/supplier/0883728b-7099-470a-aa46-97e59e972153",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"supplier",
+								"0883728b-7099-470a-aa46-97e59e972153"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create procurements",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"components_uuid\": [\r\n        \"fd0e7486-07a4-46cd-8897-3f76e7d0a3eb\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/supplier/3d2a8bd9-3ad1-48d9-bab8-eb29044e5918/components",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"supplier",
+								"3d2a8bd9-3ad1-48d9-bab8-eb29044e5918",
+								"components"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy supplied component",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/supplier/supplied_component/8aa74c1b-7d36-4f67-99fb-8d80c4245e84",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"supplier",
+								"supplied_component",
+								"8aa74c1b-7d36-4f67-99fb-8d80c4245e84"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "get products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/product/b4adbf77-1831-4d87-b219-f705c4387d83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"b4adbf77-1831-4d87-b219-f705c4387d83"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"rog strix g13\",\r\n    \"quantity\": 200,\r\n    \"components_name\": [\r\n        \"keyboard steelseries\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/e3f394b2-31f7-4265-9a56-8319549ba139",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"e3f394b2-31f7-4265-9a56-8319549ba139"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/product/e3f394b2-31f7-4265-9a56-8319549ba139",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"e3f394b2-31f7-4265-9a56-8319549ba139"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add components to product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"components_name\": [\r\n        \"keyboard steelseries\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/b4adbf77-1831-4d87-b219-f705c4387d83/components",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"b4adbf77-1831-4d87-b219-f705c4387d83",
+								"components"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy component used in product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/product/components_used/a071bae3-1cef-43ad-9271-4b7608133568",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"components_used",
+								"a071bae3-1cef-43ad-9271-4b7608133568"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "components",
+			"item": [
+				{
+					"name": "get components",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/component/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"component",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get component",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/component/0e142560-8a4c-4d0e-9e25-927db62b1ca1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"component",
+								"0e142560-8a4c-4d0e-9e25-927db62b1ca1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create component",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"keyboard steelseries-2\",\r\n    \"description\": \"keyboard steelseries for laptop without numpad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/component",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"component"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destory component",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/component/0e142560-8a4c-4d0e-9e25-927db62b1ca1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"component",
+								"0e142560-8a4c-4d0e-9e25-927db62b1ca1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update component",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"keyboard steelseries for laptop without numpad and standard arroy keys\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/component/0e142560-8a4c-4d0e-9e25-927db62b1ca1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"component",
+								"0e142560-8a4c-4d0e-9e25-927db62b1ca1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
