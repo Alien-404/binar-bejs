@@ -1,0 +1,36 @@
+### GET all suppliers
+GET http://localhost:3000/supplier
+
+### GET all suppliers
+GET http://localhost:3000/supplier/3d2a8bd9-3ad1-48d9-bab8-eb29044e5918
+
+### POST supplier
+POST http://localhost:3000/supplier
+content-type: application/json
+
+{
+    "name": "nvidia",
+    "address": "surabaya"
+}
+
+### PUT supplier
+PUT http://localhost:3000/supplier/541dcff6-1178-48db-97fa-cffa6047e1ce
+content-type: application/json
+
+{
+    "address": "jakarta"
+}
+
+### DELETE all suppliers
+DELETE  http://localhost:3000/supplier/3d2a8bd9-3ad1-48d9-bab8-eb29044e5918
+
+### POST supplied_components for supplier
+POST http://localhost:3000/supplier/541dcff6-1178-48db-97fa-cffa6047e1ce/components
+content-type: application/json
+
+{
+    "components_uuid": ["fd0e7486-07a4-46cd-8897-3f76e7d0a3eb"]
+}
+
+### DELETE supplied_components for supplier
+DELETE  http://localhost:3000/supplier/supplied_component/565486a8-730e-4dc7-983b-57ee26494bb7

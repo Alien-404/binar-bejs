@@ -1,0 +1,37 @@
+### GET all products
+GET http://localhost:3000/product
+
+### GET single product
+GET http://localhost:3000/product/0e4df419-78dd-4bde-82f7-1088869766ee
+
+### POST product
+POST http://localhost:3000/product
+content-type: application/json
+
+{
+    "name": "alienware",
+    "quantity": 60,
+    "components_name": ["rtx 3080"]
+}
+
+### PUT product
+PUT http://localhost:3000/product/64dc7a0f-2f3b-46fb-9781-314d3de2392d
+content-type: application/json
+
+{
+    "quantity": 55
+}
+
+### DELETE product
+DELETE http://localhost:3000/product/64dc7a0f-2f3b-46fb-9781-314d3de2392d
+
+### POST components to product
+POST http://localhost:3000/product/64dc7a0f-2f3b-46fb-9781-314d3de2392d/components
+content-type: application/json
+
+{
+    "components_name": ["keyboard steelseries"]
+}
+
+### DELETE component in product
+DELETE http://localhost:3000/product/components_used/2ae9275f-0956-40ed-b874-7f945fdc35b0

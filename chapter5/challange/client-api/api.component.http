@@ -1,0 +1,25 @@
+### GET all components
+GET http://localhost:3000/component
+
+### GET single component
+GET http://localhost:3000/component/fd0e7486-07a4-46cd-8897-3f76e7d0a3eb
+
+### POST component
+POST http://localhost:3000/component
+content-type: application/json
+
+{
+    "name": "rtx 3080",
+    "description": "nvidia vga 3000 series for laptop"
+}
+
+### PUT component
+PUT http://localhost:3000/component/e0d88d4d-6ca1-429a-928b-0f7406ae9a8f
+content-type: application/json
+
+{
+    "description": "nvidia vga 3000 series for laptop usage power"
+}
+
+### DELETE component
+DELETE http://localhost:3000/component/c26af6f8-ecc8-4286-97d0-d1aac77e3e45
