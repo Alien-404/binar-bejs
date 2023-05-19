@@ -3,21 +3,21 @@ x-stoplight:
   id: 4xwtbu7a4e3gr
 info:
   title: Manufaktur Binar
-  version: '1.0'
+  version: "1.0"
   description: RESTFull api challange 5 dengan orm sequelize dan database postgres
   contact:
     name: Rico
     url: rinaru.com
     email: rico@gmail.com
 servers:
-  - url: 'http://localhost:3000'
+  - url: "http://localhost:3000"
 paths:
   /auth/register:
     post:
       summary: create User
       operationId: Auth-Register
       responses:
-        '201':
+        "201":
           description: User Created
           content:
             application/json:
@@ -46,7 +46,7 @@ paths:
                         type: string
                         example: admin@gmail.com
                         format: email
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -63,12 +63,12 @@ paths:
                     default: false
                   message:
                     type: string
-                    example: 'please provide a name. email, and password'
+                    example: "please provide a name. email, and password"
                   data:
                     type: string
-                    example: 'null'
+                    example: "null"
                     nullable: true
-        '409':
+        "409":
           description: Conflict
           content:
             application/json:
@@ -77,7 +77,7 @@ paths:
                 x-examples:
                   Example 1:
                     status: false
-                    message: 'user with ${email} already exist!'
+                    message: "user with ${email} already exist!"
                     data: null
                 properties:
                   status:
@@ -85,16 +85,16 @@ paths:
                     default: false
                   message:
                     type: string
-                    example: 'user with ${email} already exist!'
+                    example: "user with ${email} already exist!"
                   data:
                     type: string
-                    example: 'null'
+                    example: "null"
                     nullable: true
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
             examples:
               create user naru:
                 value:
@@ -111,7 +111,7 @@ paths:
       summary: get token
       operationId: Auth-Login
       responses:
-        '200':
+        "200":
           description: Succesful login and return token
           content:
             application/json:
@@ -129,7 +129,7 @@ paths:
                     type: string
                   data:
                     type: string
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -149,14 +149,14 @@ paths:
                     example: please provide email and password
                   data:
                     type: string
-                    example: 'null'
+                    example: "null"
                     nullable: true
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Foribiden'
-        '404':
-          $ref: '#/components/responses/Credential'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Foribiden"
+        "404":
+          $ref: "#/components/responses/Credential"
       tags:
         - Auth
       description: login to get tokens
@@ -182,7 +182,7 @@ paths:
       tags:
         - Suppliers
       responses:
-        '200':
+        "200":
           description: Succesful get all suppliers
           content:
             application/json:
@@ -245,13 +245,13 @@ paths:
       summary: create supplier
       operationId: post-supplier
       responses:
-        '200':
+        "200":
           description: Succesful get all suppliers
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - x-stoplight:
                       id: qju9rnre4msty
                     type: object
@@ -269,8 +269,8 @@ paths:
                           x-stoplight:
                             id: jo37llg3ie3b8
                           oneOf:
-                            - $ref: '#/components/schemas/Supplier'
-        '400':
+                            - $ref: "#/components/schemas/Supplier"
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -290,23 +290,23 @@ paths:
                     example: please provide name and address
                   data:
                     type: string
-                    example: 'null'
+                    example: "null"
                     nullable: true
       tags:
         - Suppliers
       description: create new supplier
       requestBody:
-        $ref: '#/components/requestBodies/Supplier'
+        $ref: "#/components/requestBodies/Supplier"
       security:
         - Authorization: []
     parameters: []
-  '/supplier/{supplier_uuid}':
+  "/supplier/{supplier_uuid}":
     get:
       summary: get single supplier
       tags:
         - Suppliers
       responses:
-        '200':
+        "200":
           description: Succesful get supplier
           content:
             application/json:
@@ -364,18 +364,18 @@ paths:
       security:
         - Authorization: []
     parameters:
-      - $ref: '#/components/parameters/supplier_uuid'
+      - $ref: "#/components/parameters/supplier_uuid"
     put:
       summary: update supplier
       operationId: put-supplier-supplier_uuid
       responses:
-        '200':
+        "200":
           description: Succesful update supplier
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: orte51gypmg6n
@@ -384,15 +384,15 @@ paths:
                         type: string
                         x-stoplight:
                           id: oqtdy748eenpp
-                        example: 'null'
+                        example: "null"
                         nullable: true
-        '404':
+        "404":
           description: cant find supplier uuid
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: sqipr2tqvrl9u
@@ -401,7 +401,7 @@ paths:
                         type: string
                         x-stoplight:
                           id: i5g2a7rilce1r
-                        example: 'can''t find supplier with uuid ${supplier_uuid}!'
+                        example: "can't find supplier with uuid ${supplier_uuid}!"
                       status:
                         type: boolean
                         x-stoplight:
@@ -411,26 +411,26 @@ paths:
                         type: string
                         x-stoplight:
                           id: p70dw5r5v2enk
-                        example: 'null'
+                        example: "null"
                         nullable: true
       description: update supplier data
       security:
         - Authorization: []
       requestBody:
-        $ref: '#/components/requestBodies/Supplier'
+        $ref: "#/components/requestBodies/Supplier"
       tags:
         - Suppliers
     delete:
       summary: delete supplier
       operationId: delete-supplier-supplier_uuid
       responses:
-        '200':
+        "200":
           description: Succesful deleted supplier
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: pw7h0kko6plh9
@@ -439,15 +439,15 @@ paths:
                         type: string
                         x-stoplight:
                           id: t0cvky398wiiz
-                        example: 'null'
+                        example: "null"
                         nullable: true
-        '404':
+        "404":
           description: cant find supplier uuid
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: 3qsnxh02mhxj9
@@ -456,13 +456,13 @@ paths:
                         type: string
                         x-stoplight:
                           id: ijrez56t99tiq
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
                         x-stoplight:
                           id: s9yhocc9lfuwt
-                        example: 'can''t find supplier with uuid ${supplier_uuid}!'
+                        example: "can't find supplier with uuid ${supplier_uuid}!"
                       status:
                         type: boolean
                         x-stoplight:
@@ -473,7 +473,7 @@ paths:
       description: delete supplier with uuid
       security:
         - Authorization: []
-  '/supplier/{supplier_uuid}/components':
+  "/supplier/{supplier_uuid}/components":
     parameters:
       - schema:
           type: string
@@ -484,13 +484,13 @@ paths:
       summary: create procurement
       operationId: post-supplier-supplier_uuid-components
       responses:
-        '200':
+        "200":
           description: Succesfull restock component by supplier
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: cgtp07a26668y
@@ -499,20 +499,20 @@ paths:
                         type: string
                         x-stoplight:
                           id: ss0k42tzotmpz
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
                         x-stoplight:
                           id: cjpr4k6xfcmds
                         example: components added!
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: vu0e78l0vk05w
@@ -521,7 +521,7 @@ paths:
                         type: string
                         x-stoplight:
                           id: 3gvyqlopq2wqz
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
@@ -553,20 +553,20 @@ paths:
                       id: n3pbgipmmo32v
                     type: string
                     format: uuid
-  '/supplied_component/{supplied_components_uuid}':
+  "/supplied_component/{supplied_components_uuid}":
     parameters:
-      - $ref: '#/components/parameters/supplied_components_uuid'
+      - $ref: "#/components/parameters/supplied_components_uuid"
     delete:
       summary: delete procurement
       operationId: delete-supplied_component-supplied_components_uuid
       responses:
-        '200':
+        "200":
           description: Succesfull delete procurement supplied
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: h69qttq92adta
@@ -575,15 +575,15 @@ paths:
                         type: string
                         x-stoplight:
                           id: woffpw9b1rlqz
-                        example: 'null'
+                        example: "null"
                         nullable: true
-        '404':
+        "404":
           description: Not Found
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: 8c1eqbngoktrk
@@ -592,7 +592,7 @@ paths:
                         type: string
                         x-stoplight:
                           id: kkune6v8fqjq4
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       status:
                         type: boolean
@@ -603,7 +603,7 @@ paths:
                         type: string
                         x-stoplight:
                           id: bqikf0guq78ra
-                        example: 'can''t find supplied_components with uuid ${supplied_components_uuid}!'
+                        example: "can't find supplied_components with uuid ${supplied_components_uuid}!"
       description: delete procurement or compenent stock by supplier
       tags:
         - Suppliers
@@ -615,13 +615,13 @@ paths:
       tags:
         - Components
       responses:
-        '200':
+        "200":
           description: Succesfull get all components
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: ng36865omfree
@@ -634,7 +634,7 @@ paths:
                           x-stoplight:
                             id: 68vgflm4yx4ga
                           oneOf:
-                            - $ref: '#/components/schemas/Component'
+                            - $ref: "#/components/schemas/Component"
       operationId: get-component
       description: get all data components
       security:
@@ -643,13 +643,13 @@ paths:
       summary: create component
       operationId: post-component
       responses:
-        '201':
+        "201":
           description: Succesful created component
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: ox5mtad0plsf4
@@ -662,19 +662,19 @@ paths:
                           x-stoplight:
                             id: wpz1iji7fww2o
                           oneOf:
-                            - $ref: '#/components/schemas/Component'
+                            - $ref: "#/components/schemas/Component"
                       message:
                         type: string
                         x-stoplight:
                           id: kc31lkgxqjluj
                         example: created
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: b984rpl9j4ac7
@@ -683,7 +683,7 @@ paths:
                         type: string
                         x-stoplight:
                           id: ow3q057y1krl1
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
@@ -696,27 +696,27 @@ paths:
                           id: uqwx6u6lvj6o5
                         default: false
       requestBody:
-        $ref: '#/components/requestBodies/Component'
+        $ref: "#/components/requestBodies/Component"
       description: create or add component
       tags:
         - Components
       security:
         - Authorization: []
-  '/component/{component_uuid}':
+  "/component/{component_uuid}":
     parameters:
-      - $ref: '#/components/parameters/component_uuid'
+      - $ref: "#/components/parameters/component_uuid"
     get:
       summary: get single component
       tags:
         - Components
       responses:
-        '200':
+        "200":
           description: Succesful get component
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: f7gfdce9ihuln
@@ -725,7 +725,7 @@ paths:
                         x-stoplight:
                           id: 064migdteauqs
                         oneOf:
-                          - $ref: '#/components/schemas/Component'
+                          - $ref: "#/components/schemas/Component"
       operationId: get-component-component_uuid
       description: get single data component
       security:
@@ -734,13 +734,13 @@ paths:
       summary: update component
       operationId: put-component-component_uuid
       responses:
-        '200':
+        "200":
           description: Succesful update component
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: vvbokq52wusx4
@@ -749,15 +749,15 @@ paths:
                         type: string
                         x-stoplight:
                           id: e1em6j1ijjrch
-                        example: 'null'
+                        example: "null"
                         nullable: true
-        '404':
+        "404":
           description: Not Found
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: y5z83qy754ci6
@@ -766,7 +766,7 @@ paths:
                         type: string
                         x-stoplight:
                           id: lcgen2yoi2k43
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       status:
                         type: boolean
@@ -777,25 +777,25 @@ paths:
                         type: string
                         x-stoplight:
                           id: 03phfg8k20ih4
-                        example: 'can''t find component with uuid ${component_uuid}!'
+                        example: "can't find component with uuid ${component_uuid}!"
       tags:
         - Components
       description: update component data
       security:
         - Authorization: []
       requestBody:
-        $ref: '#/components/requestBodies/Component'
+        $ref: "#/components/requestBodies/Component"
     delete:
       summary: delete component
       operationId: delete-component-component_uuid
       responses:
-        '200':
+        "200":
           description: Succesfull deleted component
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: hkh1g2j2162wh
@@ -804,15 +804,15 @@ paths:
                         type: string
                         x-stoplight:
                           id: fq7ae2d3atgfa
-                        example: 'null'
+                        example: "null"
                         nullable: true
-        '404':
+        "404":
           description: Not Found
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: oko8kmkbh8rer
@@ -821,13 +821,13 @@ paths:
                         type: string
                         x-stoplight:
                           id: iy3iukfsvrsv4
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
                         x-stoplight:
                           id: p3p4cpgvy8j05
-                        example: 'can''t find component with uuid ${component_uuid}!'
+                        example: "can't find component with uuid ${component_uuid}!"
                       status:
                         type: boolean
                         x-stoplight:
@@ -844,13 +844,13 @@ paths:
       tags:
         - Products
       responses:
-        '200':
+        "200":
           description: Succesful get products
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: x4q1k8n0ohio0
@@ -863,7 +863,7 @@ paths:
                           x-stoplight:
                             id: 3h7eyu6pz52es
                           oneOf:
-                            - $ref: '#/components/schemas/Product'
+                            - $ref: "#/components/schemas/Product"
                             - type: object
                               x-stoplight:
                                 id: sifb872khcc3m
@@ -876,7 +876,7 @@ paths:
                                     x-stoplight:
                                       id: k9cw1d7q64nti
                                     allOf:
-                                      - $ref: '#/components/schemas/Component'
+                                      - $ref: "#/components/schemas/Component"
                                       - type: object
                                         x-stoplight:
                                           id: 46nwc7om1sagb
@@ -899,13 +899,13 @@ paths:
       summary: create product
       operationId: post-product
       responses:
-        '201':
+        "201":
           description: Succesful created product
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: 0fs6u7k307imx
@@ -914,19 +914,19 @@ paths:
                         x-stoplight:
                           id: sgkczych30e7l
                         oneOf:
-                          - $ref: '#/components/schemas/Product'
+                          - $ref: "#/components/schemas/Product"
                       message:
                         type: string
                         x-stoplight:
                           id: 0tugt0hvwmwdd
                         example: created
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: 43zkin4tb2zwu
@@ -935,25 +935,25 @@ paths:
                         type: string
                         x-stoplight:
                           id: p7hjpc80i52me
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
                         x-stoplight:
                           id: es8tskli3b39p
-                        example: 'please provide name, quantity, and components_name(array)!'
+                        example: "please provide name, quantity, and components_name(array)!"
                       status:
                         type: boolean
                         x-stoplight:
                           id: 595nib5l3pldc
                         default: false
-        '404':
+        "404":
           description: Not Found
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: 1w9avwgwus20u
@@ -962,7 +962,7 @@ paths:
                         type: string
                         x-stoplight:
                           id: a5vg9nhay6ixv
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
@@ -977,24 +977,24 @@ paths:
       tags:
         - Products
       requestBody:
-        $ref: '#/components/requestBodies/Product'
+        $ref: "#/components/requestBodies/Product"
       description: create or add product
       security:
         - Authorization: []
-  '/product/{product_uuid}':
+  "/product/{product_uuid}":
     parameters:
-      - $ref: '#/components/parameters/product_uuid'
+      - $ref: "#/components/parameters/product_uuid"
     put:
       summary: update product
       operationId: put-product-product_uuid
       responses:
-        '200':
+        "200":
           description: Succesfull updated product data
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: my8o8o8recs92
@@ -1003,15 +1003,15 @@ paths:
                         type: string
                         x-stoplight:
                           id: hjn7lih429pmo
-                        example: 'null'
+                        example: "null"
                         nullable: true
-        '404':
+        "404":
           description: Not Found
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: umpkixi8zhdqj
@@ -1020,13 +1020,13 @@ paths:
                         type: string
                         x-stoplight:
                           id: v33lp905wupv1
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
                         x-stoplight:
                           id: 531avgjsbmgo5
-                        example: 'can''t find product with uuid ${product_uuid}!'
+                        example: "can't find product with uuid ${product_uuid}!"
                       status:
                         type: boolean
                         x-stoplight:
@@ -1058,13 +1058,13 @@ paths:
       summary: delete product
       operationId: delete-product-product_uuid
       responses:
-        '200':
+        "200":
           description: Succesfull deleted product
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: 2uz5qfl5kjrlq
@@ -1073,15 +1073,15 @@ paths:
                         type: string
                         x-stoplight:
                           id: qfpsqf9nbuik1
-                        example: 'null'
+                        example: "null"
                         nullable: true
-        '404':
+        "404":
           description: Not Found
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: 11j72aao9bpla
@@ -1090,13 +1090,13 @@ paths:
                         type: string
                         x-stoplight:
                           id: i63vzg94ydiay
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
                         x-stoplight:
                           id: vedjrnw25xl03
-                        example: 'can''t find product with uuid ${product_uuid}!'
+                        example: "can't find product with uuid ${product_uuid}!"
                       status:
                         type: boolean
                         x-stoplight:
@@ -1111,7 +1111,7 @@ paths:
       summary: get single product
       operationId: get-product-product_uuid
       responses:
-        '200':
+        "200":
           description: Succesfull get product
           content:
             application/json:
@@ -1169,14 +1169,14 @@ paths:
       description: get single data product
       security:
         - Authorization: []
-  '/product/{product_uuid}/componts':
+  "/product/{product_uuid}/componts":
     parameters:
-      - $ref: '#/components/parameters/product_uuid'
+      - $ref: "#/components/parameters/product_uuid"
     post:
       summary: add components to product
       operationId: post-product-product_uuid-componts
       responses:
-        '200':
+        "200":
           description: Succesfull updated component to product
           content:
             application/json:
@@ -1190,8 +1190,8 @@ paths:
                       uuid: 9acbe1de-347d-4b86-828b-4945796b873f
                       name: rog strix g17
                       quantity: 420
-                      createdAt: '2023-05-05T07:28:57.094Z'
-                      updatedAt: '2023-05-05T07:28:57.094Z'
+                      createdAt: "2023-05-05T07:28:57.094Z"
+                      updatedAt: "2023-05-05T07:28:57.094Z"
                       components_used:
                         - uuid: 6489f03c-32be-42be-9177-82220c1f913b
                           name: rtx 3080
@@ -1231,13 +1231,13 @@ paths:
                                 uuid:
                                   type: string
                                   format: uuid
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: 75nj27s4bs534
@@ -1246,7 +1246,7 @@ paths:
                         type: string
                         x-stoplight:
                           id: m0sqdzje00otv
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
@@ -1258,13 +1258,13 @@ paths:
                         x-stoplight:
                           id: fuowkdecelx3w
                         default: false
-        '404':
+        "404":
           description: Not Found
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: y37hedbpxzfgg
@@ -1273,7 +1273,7 @@ paths:
                         type: string
                         x-stoplight:
                           id: umdolqm4n3bm6
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
@@ -1304,20 +1304,20 @@ paths:
                 Example 1:
                   components_name:
                     - keyboard steelseries
-  '/product/components_used/{product_component_uuid}':
+  "/product/components_used/{product_component_uuid}":
     parameters:
-      - $ref: '#/components/parameters/product_component_uuid'
+      - $ref: "#/components/parameters/product_component_uuid"
     delete:
       summary: delete component used in product
       operationId: delete-product-components_used-product_component_uuid
       responses:
-        '200':
+        "200":
           description: Succesfull deleted component used in product
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: m7n49v282bx1x
@@ -1326,15 +1326,15 @@ paths:
                         type: string
                         x-stoplight:
                           id: 13ebf66h2fafn
-                        example: 'null'
+                        example: "null"
                         nullable: true
-        '404':
+        "404":
           description: Not Found
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Wrapper'
+                  - $ref: "#/components/schemas/Wrapper"
                   - type: object
                     x-stoplight:
                       id: zvuo73tb8bk4j
@@ -1343,13 +1343,13 @@ paths:
                         type: string
                         x-stoplight:
                           id: w2zxfh79f0hx4
-                        example: 'null'
+                        example: "null"
                         nullable: true
                       message:
                         type: string
                         x-stoplight:
                           id: a9atkavzepxsn
-                        example: 'can''t find product component with id ${product_component_uuid}!'
+                        example: "can't find product component with id ${product_component_uuid}!"
                       status:
                         type: boolean
                         x-stoplight:
@@ -1403,7 +1403,7 @@ components:
         message:
           type: string
           example: success
-      description: ''
+      description: ""
     Component:
       type: object
       x-examples:
@@ -1462,7 +1462,7 @@ components:
                 default: Unauthorized!
               data:
                 type: string
-                example: 'null'
+                example: "null"
                 nullable: true
     Foribiden:
       description: Forbiden Access!
@@ -1485,7 +1485,7 @@ components:
                 default: Forbiden Access!
               data:
                 type: string
-                example: 'null'
+                example: "null"
                 nullable: true
     Credential:
       description: Credential not found!
@@ -1508,7 +1508,7 @@ components:
                 default: credential not found!
               data:
                 type: string
-                example: 'null'
+                example: "null"
                 nullable: true
   requestBodies:
     Supplier:

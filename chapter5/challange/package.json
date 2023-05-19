@@ -1,7 +1,7 @@
 {
-  "name": "challange-chapter-4",
+  "name": "challange-chapter-5",
   "version": "1.0.0",
-  "description": "binar academy backend JS - challenge-04",
+  "description": "binar academy backend JS - challenge-05",
   "main": "app.js",
   "scripts": {
     "start": "node app",
